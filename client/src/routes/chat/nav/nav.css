@@ -1,0 +1,41 @@
+.Nav {
+    flex-grow: 1;
+    height: 100vh;
+    padding: 0;
+}
+
+.chat-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 10px;
+    padding: 10px;
+    height: 40px;
+}
+
+.chat-search input[type=text] {
+    flex-grow: 1;
+    padding-left: 10px;
+    border: 0;
+    outline: 0;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.chat-search input[type=image] {
+    flex-grow: 1;
+    border: 0;
+    outline: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    transition-duration: 15s;
+}
+
+.chat-search input[type=text]::placeholder {
+    color: #737373;
+    transition-duration: 0.3s;
+}
+
+.chat-search input[type=text]:focus::placeholder {
+    color: black;
+}

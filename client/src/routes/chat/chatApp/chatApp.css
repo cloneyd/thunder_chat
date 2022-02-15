@@ -1,0 +1,8 @@
+.Chat {
+    display: flex;
+    margin: 0 auto;
+    width: 70%;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+

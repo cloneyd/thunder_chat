@@ -1,0 +1,40 @@
+.List {
+    display: flex;
+    flex-grow: 1;
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-link {
+    text-decoration: none;
+}
+
+.chat-item {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0;
+    background-color: white;
+}
+
+.last-message-user {
+    color: #006dff;
+}
+
+.last-message-content {
+    color: #5d5d5d;
+}
+
+button:hover.chat-item {
+    background-color: #f1f1f1;
+}
+
+.chat-item h2,
+.chat-item p{
+    display: flex;
+    margin: 5px;
+}

@@ -1,0 +1,126 @@
+.Content {
+    display: flex;
+    margin: 0 auto;
+    width: 70%;
+    height: 100vh;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    flex-direction: column;
+}
+.info {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.chat-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-name {
+    font-weight: 600;
+    margin: 5px;
+}
+
+.members-count {
+    color: #6e6e6e;
+    margin: 5px;
+}
+
+#chat {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: scroll;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#no-messages {
+    margin: auto;
+    padding: 5px 15px;
+    font-weight: 500;
+    background-color: #f1f1f1;
+    border-radius: 25px;
+    width: fit-content;
+}
+
+.Message {
+    display: flex;
+    flex-direction: column;
+    background-color: #4462ff;
+    color: #fff;
+    gap: 5px;
+    padding: 15px;
+    border-radius: 10px 10px 0 10px;
+    max-width: 50%;
+    min-width: 150px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    transform: scale(0);
+    transform-origin: right;
+    animation-name: showIn;
+    animation-duration: 0.2s; /* or: Xms */
+    animation-iteration-count: 1;
+    animation-direction: normal; /* or: normal */
+    animation-timing-function: cubic-bezier(
+            0.88,
+            0.19,
+            0.37,
+            1.11
+    ); /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+    animation-fill-mode: both; /* or: backwards, both, none */
+    animation-delay: 0.2s; /* or: Xms */
+}
+
+.Message p {
+    margin: 0;
+}
+
+@keyframes showIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.message-username {
+    font-weight: 600;
+}
+
+.Message.other {
+    color: black;
+    align-self: flex-start;
+    background-color: #f1f1f1;
+}
+
+.message-input {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+#file-upload {
+    display: none;
+}
+
+.message-input label {
+    margin: auto;
+    padding: 10px;
+}
+
+.message-input input[type=text] {
+    flex-grow: 1;
+    margin: 10px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+#send-message {
+    display: none;
+}

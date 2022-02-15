@@ -1,0 +1,38 @@
+.Login {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    margin: auto;
+    height: 40%;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-form>input {
+    margin: 5px;
+}
+
+.login-form>input[type=text],
+.login-form>input[type=password] {
+    height: 30px;
+    width: 300px;
+    border: 1px lightgray solid;
+    border-radius: 15px;
+    padding-left: 20px;
+}
+
+.login-form>input[type=submit] {
+    width: 200px;
+    border: 0;
+    height: 50px;
+    border-radius: 25px;
+}
