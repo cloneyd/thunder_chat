@@ -7,6 +7,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 
 import chat
 
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 @authentication_classes([JWTAuthentication])
@@ -51,17 +52,21 @@ def chats(request):
 @permission_classes([IsAuthenticated])
 @authentication_classes([JWTAuthentication])
 def create_chat(request):
+    chat_user = chat.models.ChatUser.objects.get(user=request.user)
     serializer = ChatSerializer(data=request.data)
 
     if serializer.is_valid():
         data = serializer.validated_data
         try:
-            chat.models.Chat.create(
-                name=data.get('name'),
-                members=data.get('members')
+            new_chat = chat.models.Chat.objects.create(
+                name=data.get('name')
             )
+            new_chat.members.add(chat_user.pk)
+            for user_id in data.get('members'):
+                new_chat.members.add(user_id)
+            print(new_chat)
         except IntegrityError:
-            return Response({'error': 'Cannot create chat'}, status=403)
+            return Response({'error': 'Cannot create chat'}, status=500)
         else:
             return Response({'status': 'Success'})
 

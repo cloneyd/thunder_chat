@@ -6,4 +6,4 @@ class ChatSerializer(Serializer):
     model = Chat
 
     name = CharField(required=True)
-    members = ListField(child=IntegerField)
+    members = ListField(child=IntegerField())

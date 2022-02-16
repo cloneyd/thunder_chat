@@ -81,8 +81,35 @@ def user(request):
 @permission_classes([IsAuthenticated])
 @authentication_classes([JWTAuthentication])
 def user_data(request):
+    if request.user.is_anonymous:
+        return Response(status=401)
+
     return Response({
         'data': UserSerializer(request.user).data
     })
 
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@authentication_classes([JWTAuthentication])
+def all_users(request):
+    if request.user.is_anonymous:
+        return Response(status=401)
+
+    chat_users = User.objects.all()
+    users = []
+
+    for chat_user in chat_users:
+        if chat_user.username == request.user.username:
+            continue
+
+        users.append(
+            {
+                'id': chat_user.pk,
+                'username': chat_user.username
+            }
+        )
+
+    return Response({
+        'users': users
+    })

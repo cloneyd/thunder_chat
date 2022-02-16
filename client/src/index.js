@@ -17,6 +17,7 @@ import {
   Routes,
   Route 
 } from "react-router-dom";
+import CreateChat from "./routes/chat/createChat/CreateChat";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -27,6 +28,7 @@ ReactDOM.render(
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Registration />} />
           <Route path='chats' element={<ChatApp />} />
+          <Route path='create-chat' element={<CreateChat />} />
           <Route path='chats/:chatId' element={<Content />} />
           <Route
             path='*'
