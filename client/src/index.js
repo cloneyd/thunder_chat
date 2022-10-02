@@ -5,6 +5,7 @@ import App from './App';
 import Login from "./routes/login/Login";
 import Registration from "./routes/registration/Registration";
 import ChatApp from "./routes/chat/chatApp/ChatApp";
+import CallApp from "./routes/call/callApp/CallApp";
 import Nav from './routes/chat/nav/Nav';
 import Content from "./routes/chat/content/Content";
 import reportWebVitals from './reportWebVitals';
@@ -15,7 +16,7 @@ import { Provider } from "react-redux";
 import {
   BrowserRouter,
   Routes,
-  Route 
+  Route
 } from "react-router-dom";
 import CreateChat from "./routes/chat/createChat/CreateChat";
 
@@ -30,6 +31,7 @@ ReactDOM.render(
           <Route path='chats' element={<ChatApp />} />
           <Route path='create-chat' element={<CreateChat />} />
           <Route path='chats/:chatId' element={<Content />} />
+          <Route path='video-call' element={<CallApp />} />
           <Route
             path='*'
             element={

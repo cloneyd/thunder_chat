@@ -12,8 +12,8 @@ class RegisterRequestSerializer(Serializer):
     model = User
 
     username = CharField(required=True)
-    first_name = CharField(required=True)
-    last_name = CharField(required=True)
+    firstName = CharField(required=True)
+    lastName = CharField(required=True)
     email = EmailField(required=True)
     password = CharField(required=True)
 

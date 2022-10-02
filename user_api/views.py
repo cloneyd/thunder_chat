@@ -45,12 +45,10 @@ def register(request):
         try:
             user = User.objects.create(
                 username=data.get('username'),
-                first_name=data.get('first_name'),
-                last_name=data.get('last_name'),
+                first_name=data.get('firstName'),
+                last_name=data.get('lastName'),
                 email=data.get('email'),
-                password=make_password(
-                    data.get('password')
-                )
+                password=make_password(data.get('password'))
             )
             chat.models.ChatUser.objects.create(
                 user=user

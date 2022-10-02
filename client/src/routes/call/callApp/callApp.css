@@ -1,0 +1,44 @@
+.cam {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+#output-cam {
+    height: 50%;
+}
+
+#input-cam {
+    background-color: black;
+    width: 50%;
+}
+
+#cam-params {
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+}
+
+#sticker-select {
+    background-color: black;
+    overflow-y: auto;
+    width: 50%;
+}
+
+.nickname {
+    margin: auto;
+}
+
+.left {
+    left: 0;
+    border-right: 1px solid black;
+}
+
+.right {
+    right: 0;
+}

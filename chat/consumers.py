@@ -46,8 +46,10 @@ class ChatConsumer(WebsocketConsumer):
                     'membersCount': self.members_count
                 }
             }))
+            print('conn')
         else:
-            self.close()
+            print("closed conn")
+            self.close(code=4003)
 
     def disconnect(self, code):
         async_to_sync(self.channel_layer.group_discard)(
